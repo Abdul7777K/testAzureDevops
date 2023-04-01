@@ -11,7 +11,7 @@ Remove-Item -Recurse -Force .git
 cd ..
 
 # Clone the repository again, this time with Azure credentials
-$GIT_CMD_REPOSITORY="https://65gbz645fntfpu6leg4cmvkspe4lgg4xfxodxtplvfc6yg35ezua@dev.azure.com/Learning-Devops-7777/Abdul/_git/syncWithgitEshopCommerce"
+$GIT_CMD_REPOSITORY="https://uuxlmke3sjxili4cn47cn6wnri576uh2do2xj72yewnqxieqmeca@dev.azure.com/Learning-Devops-7777/Abdul/_git/syncWithgitEshopCommerce"
 git clone $GIT_CMD_REPOSITORY
 
 # Copy the contents of the local repository to the cloned Azure repository
