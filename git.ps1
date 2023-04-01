@@ -1,4 +1,4 @@
-$AZUREPAT = "Ptw8Q~dJm7VV4VomdEMfWDCDZR1EPJ5f0-wRyc~f"
+$AZUREPAT = $env:AZUREPAT
 $AZUSERNAME = "anything"
 $AZUSER_EMAIL = "nageshdevops77@outlook.com"
 $AZORG = "Learning-Devops-7777"
@@ -11,7 +11,7 @@ Remove-Item -Recurse -Force .git
 cd ..
 
 # Clone the repository again, this time with Azure credentials
-$GIT_CMD_REPOSITORY="https://Ptw8Q~dJm7VV4VomdEMfWDCDZR1EPJ5f0-wRyc~f@dev.azure.com/Learning-Devops-7777/Abdul/_git/syncWithgitEshopCommerce"
+$GIT_CMD_REPOSITORY="https://$AZUREPAT@dev.azure.com/Learning-Devops-7777/Abdul/_git/syncWithgitEshopCommerce"
 git clone $GIT_CMD_REPOSITORY
 
 # Copy the contents of the local repository to the cloned Azure repository
@@ -27,5 +27,3 @@ git config --global user.name "$AZUSERNAME"
 git add .
 git commit -m "sync from git to azure"
 git push
-
-
