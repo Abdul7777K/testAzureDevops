@@ -1,10 +1,13 @@
 name: Push directory to another repository
-'on': push
+on: push
 jobs:
   check-bats-version:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Run script file
-        shell: pwsh
-        run: powershell.exe .\git.ps1
+    - uses: actions/checkout@v2
+    - name: Run script file
+      env:
+        AZUREPAT: ${{secrets.AZUREPAT}}
+      run: |
+         powershell.exe ./git.ps1 $AZUREPAT
+      shell: pwsh
