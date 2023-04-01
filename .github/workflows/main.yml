@@ -1,17 +1,11 @@
-name: PowerShell script execution
-
-on:
-  push:
-    branches:
-      - main
-
+name: Push directory to another repository
+'on': push
 jobs:
-  run_powershell:
-    runs-on: windows-latest
+  check-bats-version:
+    runs-on: ubuntu-latest
+    environment: AzurePAT
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Run PowerShell script
-      shell: pwsh
-      run: powershell.exe .\git.ps1
+      - uses: actions/checkout@v2
+      - name: Run script file
+        shell: pwsh
+        run: powershell.exe .\git.ps1
