@@ -1,0 +1,20 @@
+name: PowerShell script execution
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_powershell:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install PowerShell
+      uses: microsoft/setup-powershell@v1
+
+    - name: Run PowerShell script
+      shell: pwsh
+      run: powershell.exe .\git.ps1
