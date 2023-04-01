@@ -2,8 +2,7 @@ name: Push directory to another repository
 'on': push
 jobs:
   check-bats-version:
-    runs-on: ubuntu-latest
-    environment: AzurePAT
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run script file
