@@ -3,6 +3,7 @@ on: push
 jobs:
   check-bats-version:
     runs-on: windows-latest
+    environment: AZUREPAT
     steps:
     - uses: actions/checkout@v2
     - name: Run script file
